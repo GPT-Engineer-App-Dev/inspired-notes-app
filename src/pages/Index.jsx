@@ -1,4 +1,4 @@
-import { Container, Text, VStack, Box, Heading, Button, Flex, Spacer } from "@chakra-ui/react";
+import { Container, Text, VStack, Box, Heading, Button, Flex, Spacer, useColorModeValue } from "@chakra-ui/react";
 import { useEffect, useState } from "react";
 import { FaStickyNote } from "react-icons/fa";
 import backgroundImage from '../../public/images/background.png';
@@ -13,7 +13,7 @@ const Index = () => {
   const [headerColor, setHeaderColor] = useState("rgba(0, 0, 139, 0.8)");
 
   useEffect(() => {
-    setHeaderColor("#FF4500");
+    setHeaderColor("#FF6347");
   }, []);
   return (
     <Container 
