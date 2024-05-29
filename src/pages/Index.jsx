@@ -1,17 +1,28 @@
-// Update this page (the content is just a fallback if you fail and example)
-// Use chakra-ui
-import { Container, Text, VStack } from "@chakra-ui/react";
+import { Container, Text, VStack, Box, Heading, Button, Flex, Spacer } from "@chakra-ui/react";
 
-// Example of using react-icons
-// import { FaRocket } from "react-icons/fa";
-// <IconButton aria-label="Add" icon={<FaRocket />} size="lg" />; // IconButton would also have to be imported from chakra
+const notes = [
+  { title: "First Note", description: "This is the description for the first note." },
+  { title: "Second Note", description: "This is the description for the second note." },
+  { title: "Third Note", description: "This is the description for the third note." },
+];
 
 const Index = () => {
   return (
-    <Container centerContent maxW="container.md" height="100vh" display="flex" flexDirection="column" justifyContent="center" alignItems="center">
-      <VStack spacing={4}>
-        <Text fontSize="2xl">Your Blank Canvas</Text>
-        <Text>Chat with the agent to start making edits.</Text>
+    <Container maxW="container.xl" p={4}>
+      <Flex as="nav" bg="blue.500" color="white" p={4} mb={4} borderRadius="md">
+        <Heading size="md">Notes App</Heading>
+        <Spacer />
+        <Button colorScheme="teal" variant="solid">
+          + Add Note
+        </Button>
+      </Flex>
+      <VStack spacing={4} align="stretch">
+        {notes.map((note, index) => (
+          <Box key={index} p={4} shadow="md" borderWidth="1px" borderRadius="md">
+            <Heading fontSize="xl">{note.title}</Heading>
+            <Text mt={4}>{note.description}</Text>
+          </Box>
+        ))}
       </VStack>
     </Container>
   );
