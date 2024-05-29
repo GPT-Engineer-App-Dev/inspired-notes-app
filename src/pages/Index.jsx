@@ -2,6 +2,7 @@ import { Container, Text, VStack, Box, Heading, Button, Flex, Spacer, useColorMo
 import { useEffect, useState } from "react";
 import { FaStickyNote } from "react-icons/fa";
 import backgroundImage from '../../public/images/background.png';
+import stopwatchImage from '../../public/images/stopwatch.png';
 
 const notes = [
   { title: "First Note", description: "This is the description for the first note.", icon: FaStickyNote },
@@ -13,7 +14,7 @@ const Index = () => {
   const [headerColor, setHeaderColor] = useState("rgba(0, 0, 139, 0.8)");
 
   useEffect(() => {
-    setHeaderColor("#FF6347");
+    setHeaderColor("#4A90E2");
   }, []);
   return (
     <Container 
