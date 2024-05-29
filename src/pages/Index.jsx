@@ -1,9 +1,10 @@
 import { Container, Text, VStack, Box, Heading, Button, Flex, Spacer } from "@chakra-ui/react";
+import { FaStickyNote } from "react-icons/fa";
 
 const notes = [
-  { title: "First Note", description: "This is the description for the first note." },
-  { title: "Second Note", description: "This is the description for the second note." },
-  { title: "Third Note", description: "This is the description for the third note." },
+  { title: "First Note", description: "This is the description for the first note.", icon: FaStickyNote },
+  { title: "Second Note", description: "This is the description for the second note.", icon: FaStickyNote },
+  { title: "Third Note", description: "This is the description for the third note.", icon: FaStickyNote },
 ];
 
 const Index = () => {
@@ -19,7 +20,10 @@ const Index = () => {
       <VStack spacing={4} align="stretch">
         {notes.map((note, index) => (
           <Box key={index} p={4} shadow="md" borderWidth="1px" borderRadius="md">
-            <Heading fontSize="xl">{note.title}</Heading>
+            <Flex align="center">
+              <note.icon size="24px" style={{ marginRight: "8px" }} />
+              <Heading fontSize="xl">{note.title}</Heading>
+            </Flex>
             <Text mt={4}>{note.description}</Text>
           </Box>
         ))}
