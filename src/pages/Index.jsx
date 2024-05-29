@@ -1,5 +1,4 @@
 import { Container, Text, VStack, Box, Heading, Button, Flex, Spacer } from "@chakra-ui/react";
-import { AddIcon } from "@chakra-ui/icons";
 
 const notes = [
   { title: "First Note", description: "This is the description for the first note." },
@@ -13,8 +12,8 @@ const Index = () => {
       <Flex as="nav" bg="blue.500" color="white" p={4} mb={4} borderRadius="md">
         <Heading size="md">Notes App</Heading>
         <Spacer />
-        <Button leftIcon={<AddIcon />} colorScheme="teal" variant="solid">
-          Add Note
+        <Button colorScheme="teal" variant="solid">
+          + Add Note
         </Button>
       </Flex>
       <VStack spacing={4} align="stretch">
