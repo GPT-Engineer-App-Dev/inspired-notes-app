@@ -14,7 +14,7 @@ const Index = () => {
   const [headerColor, setHeaderColor] = useState("rgba(0, 0, 139, 0.8)");
 
   useEffect(() => {
-    setHeaderColor("#4A90E2");
+    setHeaderColor("#FF0000"); // Red color from the provided image
   }, []);
   return (
     <Container 
