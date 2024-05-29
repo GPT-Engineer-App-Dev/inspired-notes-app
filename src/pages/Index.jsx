@@ -1,4 +1,5 @@
 import { Container, Text, VStack, Box, Heading, Button, Flex, Spacer } from "@chakra-ui/react";
+import { useEffect, useState } from "react";
 import { FaStickyNote } from "react-icons/fa";
 import backgroundImage from '../../public/images/background.png';
 
@@ -9,6 +10,11 @@ const notes = [
 ];
 
 const Index = () => {
+  const [headerColor, setHeaderColor] = useState("rgba(0, 0, 139, 0.8)");
+
+  useEffect(() => {
+    setHeaderColor("#FF4500");
+  }, []);
   return (
     <Container 
       maxW="container.xl" 
@@ -18,7 +24,7 @@ const Index = () => {
       backgroundPosition="center" 
       minHeight="100vh"
     >
-      <Flex as="nav" bg="rgba(0, 0, 139, 0.8)" color="white" p={4} mb={4} borderRadius="md">
+      <Flex as="nav" bg={headerColor} color="white" p={4} mb={4} borderRadius="md">
         <Heading size="md">Notes App</Heading>
         <Spacer />
         <Button colorScheme="teal" variant="solid">
