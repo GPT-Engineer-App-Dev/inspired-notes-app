@@ -1,5 +1,6 @@
 import { Container, Text, VStack, Box, Heading, Button, Flex, Spacer } from "@chakra-ui/react";
 import { FaStickyNote } from "react-icons/fa";
+import backgroundImage from '../../public/images/background.png';
 
 const notes = [
   { title: "First Note", description: "This is the description for the first note.", icon: FaStickyNote },
@@ -9,8 +10,15 @@ const notes = [
 
 const Index = () => {
   return (
-    <Container maxW="container.xl" p={4}>
-      <Flex as="nav" bg="blue.500" color="white" p={4} mb={4} borderRadius="md">
+    <Container 
+      maxW="container.xl" 
+      p={4} 
+      backgroundImage={`url(${backgroundImage})`} 
+      backgroundSize="cover" 
+      backgroundPosition="center" 
+      minHeight="100vh"
+    >
+      <Flex as="nav" bg="rgba(0, 0, 139, 0.8)" color="white" p={4} mb={4} borderRadius="md">
         <Heading size="md">Notes App</Heading>
         <Spacer />
         <Button colorScheme="teal" variant="solid">
@@ -19,7 +27,7 @@ const Index = () => {
       </Flex>
       <VStack spacing={4} align="stretch">
         {notes.map((note, index) => (
-          <Box key={index} p={4} shadow="md" borderWidth="1px" borderRadius="md">
+          <Box key={index} p={4} shadow="md" borderWidth="1px" borderRadius="md" bg="rgba(255, 255, 255, 0.8)">
             <Flex align="center">
               <note.icon size="24px" style={{ marginRight: "8px" }} />
               <Heading fontSize="xl">{note.title}</Heading>
